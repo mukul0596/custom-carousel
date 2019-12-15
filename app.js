@@ -1,8 +1,14 @@
 const eventsContainer = document.getElementsByClassName("events-container")[0];
 
-const numberOfEvents = parseInt(prompt("Enter the total number of events: "));
+let numberOfEvents = 0;
+while (numberOfEvents <= 0) {
+    numberOfEvents = parseInt(prompt("Enter the total number of events (greater than 0): "));    
+}
 let setNumber = 1;
-let numberOfEventsinOneSet = parseInt(prompt("Enter the number of events to be shown at a time: "));
+let numberOfEventsinOneSet = 0;
+while (numberOfEventsinOneSet <= 0 || numberOfEventsinOneSet > numberOfEvents) {
+    numberOfEventsinOneSet = parseInt(prompt("Enter the number of events to be shown at a time (greater than 0 and less than total number of events): "));
+}
 let numberOfSet = parseInt(numberOfEvents / numberOfEventsinOneSet);
 let numberOfEventsinLastSet = numberOfEvents % numberOfEventsinOneSet;
 let cardWidth = 80 / numberOfEventsinOneSet; 
