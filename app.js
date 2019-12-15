@@ -90,6 +90,12 @@ const navigateEvent = (dotIndex) => {
     }
 }
 
-eventSetChangeInterval = setInterval(changeEventSet, 5000);
-createEventDots();
-createEvent();
+
+window.onload = () => {
+    setTimeout(() => {
+        changeEventSet();
+        eventSetChangeInterval = setInterval(changeEventSet, 5000);
+    }, 1);
+    createEventDots();
+    createEvent();
+}
